@@ -1,10 +1,15 @@
 {
-  "name": "mahankals/package-name",
+  "name": "cakephpmitra/rbac",
   "version": "1.0.0",
-  "description": "package-description",
+  "description": "Database-backed Role-Based Access Control for CakePHP 5 with CakeDC/Users integration",
   "keywords": [
     "cakephp",
-    "plugin"
+    "plugin",
+    "rbac",
+    "roles",
+    "permissions",
+    "authorization",
+    "access-control"
   ],
   "type": "cakephp-plugin",
   "license": "MIT",
@@ -16,15 +21,29 @@
   ],
   "require": {
     "php": ">=8.1",
-    "cakephp/cakephp": "5.1.*"
+    "cakephp/cakephp": "^5.0",
+    "cakedc/users": "^16.0",
+    "cakephp/authorization": "^3.0"
   },
   "autoload": {
     "psr-4": {
-      "package-title\\": "src/"
+      "Rbac\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Rbac\\Test\\": "tests/"
     }
   },
   "extra": {
-      "cakephp-plugin": true
+    "cakephp-plugin": true
+  },
+  "config": {
+    "allow-plugins": {
+      "cakephp/plugin-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true
