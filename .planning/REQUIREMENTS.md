@@ -74,9 +74,43 @@
 
 ## Traceability
 
-| Requirement | Phase |
-|-------------|-------|
-| (Filled by roadmapper) | |
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| DB-01 | Phase 1 | Pending |
+| DB-02 | Phase 1 | Pending |
+| DB-03 | Phase 1 | Pending |
+| DB-04 | Phase 1 | Pending |
+| DB-05 | Phase 1 | Pending |
+| DB-06 | Phase 1 | Pending |
+| DB-07 | Phase 1 | Pending |
+| DB-08 | Phase 1 | Pending |
+| AUTH-01 | Phase 2 | Pending |
+| AUTH-02 | Phase 2 | Pending |
+| AUTH-08 | Phase 2 | Pending |
+| AUTH-03 | Phase 3 | Pending |
+| AUTH-04 | Phase 3 | Pending |
+| AUTH-05 | Phase 3 | Pending |
+| AUTH-06 | Phase 3 | Pending |
+| AUTH-07 | Phase 3 | Pending |
+| VIEW-01 | Phase 5 | Pending |
+| VIEW-02 | Phase 5 | Pending |
+| VIEW-03 | Phase 5 | Pending |
+| UI-01 | Phase 6 | Pending |
+| UI-02 | Phase 6 | Pending |
+| UI-03 | Phase 6 | Pending |
+| UI-04 | Phase 6 | Pending |
+| UI-05 | Phase 6 | Pending |
+| UI-06 | Phase 6 | Pending |
+| DEV-01 | Phase 7 | Pending |
+| DEV-02 | Phase 7 | Pending |
+| DEV-03 | Phase 7 | Pending |
+| QA-01 | Phases 1, 2, 3 | Pending |
+| QA-02 | Phases 4, 6 | Pending |
+| QA-03 | Phase 8 | Pending |
+| QA-04 | Phase 8 | Pending |
+| QA-05 | Phase 8 | Pending |
+
+**Coverage:** 33/33 requirements mapped (100%)
 
 ---
 *Last updated: 2026-02-04*
