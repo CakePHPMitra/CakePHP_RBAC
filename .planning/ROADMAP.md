@@ -36,6 +36,14 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 4. Composite indexes on pivot tables improve query performance (verified via EXPLAIN)
 5. Unit tests validate model associations and constraints
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Create database migrations for all RBAC tables
+- [ ] 01-02-PLAN.md — Create Table classes with ORM associations and Entity classes
+- [ ] 01-03-PLAN.md — Create idempotent seed files for default roles and permissions
+- [ ] 01-04-PLAN.md — Create test fixtures and unit tests for model layer
+
 ---
 
 ### Phase 2: Service Layer
@@ -56,6 +64,11 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 3. Permission lookups are cached per-request (second call uses cache, verified via test mocks)
 4. Cache invalidates immediately when role-permission assignments change
 5. Unit tests cover permission resolution with multiple roles, direct permissions, and superadmin bypass
+
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
 
 ---
 
@@ -80,6 +93,11 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 4. Multi-role config controls whether users can have one role (default) or multiple roles
 5. Unit tests validate resolver integration with Authorization framework
 
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
+
 ---
 
 ### Phase 4: Plugin Bootstrap & Middleware
@@ -97,6 +115,11 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 3. Host app can load plugin via `addPlugin()` without additional middleware configuration
 4. Integration tests verify unauthorized requests return 403, authorized requests succeed
 5. Middleware order validation throws clear error if Authentication not loaded first
+
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
 
 ---
 
@@ -116,6 +139,11 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 2. `$this->Rbac->hasRole('admin')` checks if current user has specific role
 3. Helper caches permission checks within single request (verified via test query count)
 4. Helper works in loops without N+1 queries (50 permission checks = 1 DB query)
+
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
 
 ---
 
@@ -142,6 +170,11 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 5. All admin UI routes require `rbac.*` permissions (verified via integration test of unauthorized access)
 6. Integration tests verify CRUD operations and permission protection
 
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
+
 ---
 
 ### Phase 7: Developer Tools
@@ -160,6 +193,11 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 2. `bin/cake rbac seed` creates default roles and permissions (safe to run multiple times)
 3. Auto-discovery skips internal/plugin routes via whitelist configuration
 4. Commands provide clear output showing created/skipped/updated permissions
+
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
 
 ---
 
@@ -181,13 +219,18 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 4. Code examples in documentation are tested and working
 5. Documentation covers superadmin role restrictions and security considerations
 
+**Plans:** (created by /gsd:plan-phase)
+
+Plans:
+- [ ] TBD — Planning not started
+
 ---
 
 ## Progress
 
 | Phase | Status | Requirements | Completion |
 |-------|--------|--------------|------------|
-| 1 - Database Foundation | Pending | 9 | 0% |
+| 1 - Database Foundation | Planned | 9 | 0% |
 | 2 - Service Layer | Pending | 4 | 0% |
 | 3 - Authorization Integration | Pending | 6 | 0% |
 | 4 - Plugin Bootstrap & Middleware | Pending | 1 | 0% |
@@ -200,4 +243,4 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 
 ---
 
-*Last updated: 2026-02-04*
+*Last updated: 2026-02-05*
