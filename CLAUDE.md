@@ -43,6 +43,12 @@ CakePHPMitra/RBAC — A standalone CakePHP 5 plugin providing database-backed Ro
 - Fixtures in `tests/Fixture/`
 - Run tests: `vendor/bin/phpunit`
 
+## Phase Completion Workflow
+
+- **Push to remote on every phase completion** — After completing a phase, commit all changes and push to the remote repository
+- Ensure all tests pass before pushing
+- Update relevant documentation before marking phase complete
+
 ## Key Files
 
 | File | Purpose |
