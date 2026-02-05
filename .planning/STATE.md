@@ -10,15 +10,17 @@
 
 ## Current Position
 
-**Phase:** 1 - Database Foundation
-**Plan:** Not started
-**Status:** Pending
-**Progress:** [░░░░░░░░░░] 0% (0/9 requirements)
+**Phase:** 1 of 8 (Database Foundation)
+**Plan:** 1 of 3 complete
+**Status:** In progress
+**Last activity:** 2026-02-05 - Completed 01-01-PLAN.md (migrations)
+
+**Progress:** [###.......] 33% (1/3 plans in phase)
 
 **Next Actions:**
-1. Run `/gsd:plan-phase 1` to create execution plan for Database Foundation
-2. Begin implementation with migrations for roles and permissions tables
-3. Create model Table classes with associations
+1. Execute 01-02-PLAN.md (Table classes with ORM associations)
+2. Execute 01-03-PLAN.md (seed data)
+3. Run migrations to verify schema
 
 ---
 
@@ -26,11 +28,11 @@
 
 | Metric | Current | Target | Status |
 |--------|---------|--------|--------|
-| Phases Complete | 0/8 | 8/8 | 🔴 Not Started |
-| Requirements Complete | 0/33 | 33/33 | 🔴 Not Started |
-| Plans Complete | 0/8 | 8/8 | 🔴 Not Started |
-| Tests Passing | 0 | TBD | 🔴 Not Started |
-| Documentation Complete | 0/3 | 3/3 | 🔴 Not Started |
+| Phases Complete | 0/8 | 8/8 | In Progress |
+| Requirements Complete | 2/33 | 33/33 | In Progress |
+| Plans Complete | 1/~24 | ~24 | In Progress |
+| Tests Passing | 0 | TBD | Not Started |
+| Documentation Complete | 0/3 | 3/3 | Not Started |
 
 ---
 
@@ -38,15 +40,20 @@
 
 ### Key Decisions
 
-- [ ] Database schema design finalized (roles, permissions, pivot tables)
-- [ ] Cache strategy selected (cache backend, TTL, invalidation approach)
-- [ ] Middleware integration approach confirmed (extend vs replace CakeDC middleware)
-- [ ] Superadmin role protection mechanism implemented (database constraints vs service layer)
-- [ ] Multi-role resolution strategy decided (union vs intersection of permissions)
+| Decision | Phase | Rationale |
+|----------|-------|-----------|
+| Composite primary keys on pivot tables | 01-01 | Cleaner schema, saves space, CakePHP 5 convention |
+| UUID type for user_id foreign keys | 01-01 | Matches CakeDC/Users primary key exactly |
+| RESTRICT delete on roles/permissions when users assigned | 01-01 | Prevents orphaned assignments |
+| Soft delete columns (deleted_at) included | 01-01 | Future-proofing, behavior configurable |
+| - [ ] Cache strategy selected | -- | Pending |
+| - [ ] Middleware integration approach | -- | Pending |
+| - [ ] Multi-role resolution strategy | -- | Pending |
 
 ### Active TODOs
 
-*No active TODOs yet - phase planning not started*
+- Run `bin/cake migrations migrate --plugin Rbac` to apply schema (after Table classes complete)
+- Verify foreign keys work with CakeDC/Users users table
 
 ### Blockers
 
@@ -66,13 +73,16 @@
 
 ## Session Continuity
 
-**Last Session:** 2026-02-04
-**Session Summary:** Roadmap created with 8 phases derived from 33 v1 requirements. Phase structure follows research recommendations: database → service → authorization → middleware → view → UI → tools → docs.
+**Last Session:** 2026-02-05
+**Session Summary:** Completed 01-01-PLAN.md - created 5 reversible migrations for RBAC schema (roles, permissions, users_roles, users_permissions, roles_permissions). All tables have proper indexes and foreign key constraints.
+
+**Stopped at:** Completed 01-01-PLAN.md
+**Resume file:** .planning/phases/01-database-foundation/01-02-PLAN.md
 
 **For Next Session:**
-1. Review ROADMAP.md to confirm phase structure and success criteria
-2. Run `/gsd:plan-phase 1` to begin Database Foundation implementation
-3. Verify CakePHP 5 migration patterns and ORM association syntax
+1. Execute 01-02-PLAN.md to create Table classes with ORM associations
+2. Execute 01-03-PLAN.md to create seed data
+3. Run migrations and verify schema in host app
 
 **Context to Preserve:**
 - Superadmin role must be system-managed: hidden from CRUD, cannot be created manually, only assignable
@@ -83,4 +93,4 @@
 
 ---
 
-*Last updated: 2026-02-04*
+*Last updated: 2026-02-05*
