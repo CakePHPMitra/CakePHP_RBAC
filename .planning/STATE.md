@@ -11,15 +11,15 @@
 ## Current Position
 
 **Phase:** 1 of 8 (Database Foundation)
-**Plan:** 2 of 3 complete
-**Status:** In progress
-**Last activity:** 2026-02-05 - Completed 01-02-PLAN.md (ORM models)
+**Plan:** 3 of 3 complete
+**Status:** Phase complete
+**Last activity:** 2026-02-09 - Completed 01-03-PLAN.md (seed data)
 
-**Progress:** [######....] 67% (2/3 plans in phase)
+**Progress:** [##########] 100% (3/3 plans in phase)
 
 **Next Actions:**
-1. Execute 01-03-PLAN.md (seed data)
-2. Run migrations to verify schema
+1. Run migrations and seeds to verify schema: `bin/cake migrations migrate --plugin Rbac && bin/cake migrations seed --plugin Rbac`
+2. Verify ORM associations work with seeded data
 3. Begin Phase 2 (Service Layer)
 
 ---
@@ -28,9 +28,9 @@
 
 | Metric | Current | Target | Status |
 |--------|---------|--------|--------|
-| Phases Complete | 0/8 | 8/8 | In Progress |
-| Requirements Complete | 4/33 | 33/33 | In Progress |
-| Plans Complete | 2/~24 | ~24 | In Progress |
+| Phases Complete | 1/8 | 8/8 | In Progress |
+| Requirements Complete | 6/33 | 33/33 | In Progress |
+| Plans Complete | 3/~24 | ~24 | In Progress |
 | Tests Passing | 0 | TBD | Not Started |
 | Documentation Complete | 0/3 | 3/3 | Not Started |
 
@@ -50,15 +50,19 @@
 | Permission name regex /^[a-zA-Z0-9.]+$/ | 01-02 | Enforces dotted format for consistent naming |
 | buildRules for unique constraints | 01-02 | Database-level enforcement prevents race conditions |
 | saveStrategy: 'append' on belongsToMany | 01-02 | Prevents accidental removal of existing associations |
+| Superadmin gets zero permission assignments | 01-03 | Bypass logic handled in service layer, not via permission grants |
+| Idempotency via SELECT COUNT checks | 01-03 | Simple, reliable check - seeds can run multiple times safely |
+| Seed dependency ordering | 01-03 | RolesPermissionsSeed requires role/permission IDs from previous seeds |
 | - [ ] Cache strategy selected | -- | Pending |
 | - [ ] Middleware integration approach | -- | Pending |
 | - [ ] Multi-role resolution strategy | -- | Pending |
 
 ### Active TODOs
 
-- Run `bin/cake migrations migrate --plugin Rbac` to apply schema (after seed data complete)
-- Execute 01-03-PLAN.md for seed data
+- Run `bin/cake migrations migrate --plugin Rbac` to apply schema in host app
+- Run `bin/cake migrations seed --plugin Rbac` to populate default data
 - Verify foreign keys work with CakeDC/Users users table
+- Test ORM associations with contain() using seeded data
 
 ### Blockers
 
@@ -78,16 +82,16 @@
 
 ## Session Continuity
 
-**Last Session:** 2026-02-05
-**Session Summary:** Completed 01-02-PLAN.md - created 5 Table classes (RolesTable, PermissionsTable, UsersRolesTable, UsersPermissionsTable, RolesPermissionsTable) and 5 Entity classes with ORM associations and validation rules.
+**Last Session:** 2026-02-09
+**Session Summary:** Completed 01-03-PLAN.md - created 3 idempotent seed files (RolesSeed, PermissionsSeed, RolesPermissionsSeed) providing default roles, permissions, and role-permission assignments. Phase 1 (Database Foundation) now complete.
 
-**Stopped at:** Completed 01-02-PLAN.md
-**Resume file:** .planning/phases/01-database-foundation/01-03-PLAN.md
+**Stopped at:** Completed 01-03-PLAN.md (Phase 1 complete)
+**Resume file:** .planning/phases/02-service-layer/02-01-PLAN.md (if exists)
 
 **For Next Session:**
-1. Execute 01-03-PLAN.md to create seed data (default roles and permissions)
-2. Run migrations and seeds in host app
-3. Verify ORM associations work with contain()
+1. Verify Phase 1 in host app: run migrations and seeds, test ORM associations
+2. Begin Phase 2 (Service Layer): Create RbacService with permission checking logic
+3. Implement superadmin bypass (check is_system flag)
 
 **Context to Preserve:**
 - Superadmin role must be system-managed: hidden from CRUD, cannot be created manually, only assignable
@@ -99,4 +103,4 @@
 
 ---
 
-*Last updated: 2026-02-05*
+*Last updated: 2026-02-09*
