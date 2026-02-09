@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+    colors="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    bootstrap="tests/bootstrap.php"
+    cacheResultFile="tmp/tests/.phpunit.result.cache"
+>
+    <php>
+        <ini name="memory_limit" value="-1"/>
+        <ini name="apc.enable_cli" value="1"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Rbac Plugin Test Suite">
+            <directory>tests/TestCase/</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage
+        includeUncoveredFiles="true"
+        processUncoveredFiles="true"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+        disableCodeCoverageIgnore="true"
+    >
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+        <exclude>
+            <directory>src/Console/</directory>
+        </exclude>
+    </coverage>
+</phpunit>
