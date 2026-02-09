@@ -4,7 +4,7 @@
 
 **Core Value:** Runtime-manageable, granular permission control through database-backed RBAC system with admin UI — replacing CakeDC/Users' single-column role and static config-file permissions.
 
-**Current Focus:** Phase 1 - Database Foundation (establish schema, models, associations, indexes, seed data)
+**Current Focus:** Phase 1 complete ✓ — Next: Phase 2 - Service Layer (RbacService, permission checking, caching, superadmin bypass)
 
 ---
 
@@ -29,7 +29,7 @@
 | Metric | Current | Target | Status |
 |--------|---------|--------|--------|
 | Phases Complete | 1/8 | 8/8 | In Progress |
-| Requirements Complete | 6/33 | 33/33 | In Progress |
+| Requirements Complete | 9/33 | 33/33 | In Progress |
 | Plans Complete | 4/~24 | ~24 | In Progress |
 | Tests Passing | 23 | TBD | In Progress |
 | Documentation Complete | 0/3 | 3/3 | Not Started |

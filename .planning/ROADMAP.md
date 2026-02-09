@@ -39,10 +39,10 @@ This roadmap delivers a database-backed RBAC plugin for CakePHP 5.x with CakeDC/
 **Plans:** 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Create database migrations for all RBAC tables
-- [ ] 01-02-PLAN.md — Create Table classes with ORM associations and Entity classes
-- [ ] 01-03-PLAN.md — Create idempotent seed files for default roles and permissions
-- [ ] 01-04-PLAN.md — Create test fixtures and unit tests for model layer
+- [x] 01-01-PLAN.md — Create database migrations for all RBAC tables
+- [x] 01-02-PLAN.md — Create Table classes with ORM associations and Entity classes
+- [x] 01-03-PLAN.md — Create idempotent seed files for default roles and permissions
+- [x] 01-04-PLAN.md — Create test fixtures and unit tests for model layer
 
 ---
 
@@ -230,7 +230,7 @@ Plans:
 
 | Phase | Status | Requirements | Completion |
 |-------|--------|--------------|------------|
-| 1 - Database Foundation | Planned | 9 | 0% |
+| 1 - Database Foundation | ✓ Complete (2026-02-09) | 9 | 100% |
 | 2 - Service Layer | Pending | 4 | 0% |
 | 3 - Authorization Integration | Pending | 6 | 0% |
 | 4 - Plugin Bootstrap & Middleware | Pending | 1 | 0% |
@@ -239,8 +239,8 @@ Plans:
 | 7 - Developer Tools | Pending | 3 | 0% |
 | 8 - Documentation & Polish | Pending | 3 | 0% |
 
-**Overall:** 0/33 requirements complete (0%)
+**Overall:** 9/33 requirements complete (27%)
 
 ---
 
-*Last updated: 2026-02-05*
+*Last updated: 2026-02-09*
